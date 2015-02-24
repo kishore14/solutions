@@ -37,4 +37,28 @@ end
 result = fib(0,1,limit)
 puts "result is #{result}"
 
-#didnt do 8 ..10
+#8
+str="this is sample to be titlezied."
+str=str.split.map{|one_word| one_word.downcase.capitalize}.join(' ')
+puts str
+
+#10
+hash={
+  "Herman" => {"age"=>32,"gender"=>"male"},
+  "Lily"=> {"age"=>30,"gender"=>"female"},
+  "Grandpa"=>{"age"=>402,"gender"=>"male"},
+  "Marilyn"=>{"age"=>23,"gender"=>"female"}
+  }
+
+adult_age=18
+senior=65
+hash.each do|k,value|
+  value[:demographics]  ="kid" if value["age"]<adult_age
+  value[:demographics] = "adult" if (adult_age..senior).include? value["age"]
+  value[:demographics] = "senior" if value["age"]>=senior
+  
+end
+
+p hash
+  
+  
